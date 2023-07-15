@@ -25,7 +25,7 @@ jobs:
       run: | 
        export RELEASE_TAG=$(date +"%Y%m%d")
        echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
-       papeer get --selector='ol>li>a' --output The_Rust_Programming_Language_$RELEASE_TAG.epub --images --format=epub https://doc.rust-lang.org/book/
+       papeer get --selector='ol>li>a' --output The_Rust_Programming_Language_$RELEASE_TAG.epub --format=epub https://doc.rust-lang.org/book/
        ls ./
        
     - name: Create Release
