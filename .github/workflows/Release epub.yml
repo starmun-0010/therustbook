@@ -29,13 +29,13 @@ jobs:
        papeer get --selector='ol>li>a' --format=epub https://doc.rust-lang.org/book/
        export RELEASE_TAG=$(date+"")
        echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
-       
+       cp ./The_Rust_Programming_Language_-_The_Rust_Programming_Language.epub ./The_Rust_Programming_Language_$RELEASE_TAG.epub
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         name: The Rust Book - ${{ env.RELEASE_TAG }}
         tag_name: v${{ env.RELEASE_TAG }}
-        files: The_Rust_Programming_Language_-${{ env.RELEASE_TAG }}.iso
+        files: The_Rust_Programming_Language_${{ env.RELEASE_TAG }}.epub
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_REPOSITORY: starmun-0010/therustbook
