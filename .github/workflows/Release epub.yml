@@ -30,7 +30,7 @@ jobs:
        export RELEASE_TAG=$(date)
        echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
        cp $book ./The_Rust_Programming_Language_$RELEASE_TAG.epub
-    - name: Create Release
+       
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
