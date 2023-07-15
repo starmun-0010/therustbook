@@ -26,10 +26,9 @@ jobs:
 
     - name: Generate Rust Epub
       run: | 
-       book=$(papeer get --selector='ol>li>a' --format=epub https://doc.rust-lang.org/book/)
-       export RELEASE_TAG=$(date)
+       papeer get --selector='ol>li>a' --format=epub https://doc.rust-lang.org/book/
+       export RELEASE_TAG=$(date+"")
        echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
-       cp $book ./The_Rust_Programming_Language_$RELEASE_TAG.epub
        
     - name: Create Release
       uses: softprops/action-gh-release@v1
