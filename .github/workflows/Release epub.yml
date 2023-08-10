@@ -31,7 +31,7 @@ jobs:
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
-        name: The Rust Book - ${{ env.RELEASE_TAG }}
+        name: The Rust Book EPUB - ${{ env.RELEASE_TAG }}
         tag_name: v${{ env.RELEASE_TAG }}
         body: Release v${{ env.RELEASE_TAG }}
         files: The_Rust_Programming_Language_${{ env.RELEASE_TAG }}.epub
